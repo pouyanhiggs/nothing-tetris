@@ -21,9 +21,10 @@ jobs:
       - name: Install Dependencies
         run: npm install --legacy-peer-deps
 
-      - name: Build Web Assets & Sync
+      - name: Build Web Assets & Setup Android
         run: |
           npm run build
+          npx cap add android
           npx cap sync android
 
       - name: Setup Java JDK
